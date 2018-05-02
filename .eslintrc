@@ -1,0 +1,7 @@
+{
+  "extends": "eslint-config-egg",
+  "indent": [
+    2,
+    4
+  ]
+}
