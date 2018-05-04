@@ -7,7 +7,7 @@ module.exports = appInfo => {
 
   // add your config here
   config.middleware = [];
-  config.dbUrl = "mongodb://127.0.0.1/zhufengblog";
+
   config.security = {
     xframe: {
       enable: false,
@@ -16,10 +16,28 @@ module.exports = appInfo => {
       enable: false
     }
   }
+
   config.cors = {
     origin: 'http://localhost:7002',
     credentials: true,
     methods: 'GET,HEAD,PUT,OPTIONS,POST,DELETE,PATCH'
   };
+
+  config.mongoose={
+    client: {
+      url:'mongodb://127.0.0.1/zhufengblog'
+    }
+  }
+
+  config.jwt = {
+    secret: 'zfpx',
+    expiresIn: '30m',
+    enable:false
+  };
+  
+  exports.multipart = {
+    fileSize: '50mb',
+  };
+
   return config;
 };
